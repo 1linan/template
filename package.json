@@ -29,7 +29,8 @@
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx",
     "lint:css": "stylelint src/**/*.less --fix  --custom-syntax postcss-less",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commitlint": "commitlint --config commitlint.cjs -e -V"
   },
   "husky": {
     "hooks": {
