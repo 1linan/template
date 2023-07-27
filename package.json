@@ -24,10 +24,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "precommit": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx",
-    "lint:css": "stylelint src/**/*.less --fix  --custom-syntax postcss-less"
+    "lint:css": "stylelint src/**/*.less --fix  --custom-syntax postcss-less",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +70,8 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "postcss": "^8.4.21",
     "postcss-less": "^6.0.0",
     "prettier": "^3.0.0",
