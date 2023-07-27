@@ -17,5 +17,7 @@
     "tailwindcss"
   ],
   "editor.formatOnSave": false,//设置为 false，因为我不希望文件格式的默认编辑器配置与 ESLint 和 Prettier 发生冲突。
-
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
 }
