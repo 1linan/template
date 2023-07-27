@@ -1,0 +1,21 @@
+{
+  "prettier.configPath": ".prettierrc.js",
+  "editor.codeActionsOnSave": {//每次在保存文件时安装的插件都能正常工作。由于 ESLint 的配置关联了 Prettier 的配置，所以每次在点击保存时，它都会格式化和 lint 你的代码。
+    "source.fixAll": true, // 开启自动修复
+    "source.fixAll.stylelint": true // 开启stylelint自动修复
+    },
+  "blueprint.templatesPath": [
+    ".vscode/blueprint-templates",
+  ],
+  "eslint.options": {
+    // 执行eslint命令的时候有效
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+  "cSpell.words": [
+    "ahooks",
+    "svgr",
+    "tailwindcss"
+  ],
+  "editor.formatOnSave": false,//设置为 false，因为我不希望文件格式的默认编辑器配置与 ESLint 和 Prettier 发生冲突。
+
+}
